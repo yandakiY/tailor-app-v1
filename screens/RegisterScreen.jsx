@@ -12,6 +12,7 @@ export default function RegisterScreen({onRegister}) {
     const [form, setForm] = useState({
         username: '',
         password: '',
+        passwordConfirm: '',
         firstName: '',
         lastName: '',
         email: '',
@@ -44,7 +45,7 @@ export default function RegisterScreen({onRegister}) {
                 style={styles.input}
             />
             <TextInput
-                label="Password"
+                label="Mot de passe"
                 value={form.password}
                 onChangeText={text => updateField('password', text)}
                 mode="flat"
@@ -53,7 +54,16 @@ export default function RegisterScreen({onRegister}) {
                 style={styles.input}
             />
             <TextInput
-                label="First Name"
+                label="Confirmation du mot de passe"
+                value={form.password}
+                onChangeText={text => updateField('passwordConfirm', text)}
+                mode="flat"
+                secureTextEntry
+                left={<TextInput.Icon icon="lock" />}
+                style={styles.input}
+            />
+            <TextInput
+                label="Nom"
                 value={form.firstName}
                 onChangeText={text => updateField('firstName', text)}
                 mode="flat"
@@ -61,7 +71,7 @@ export default function RegisterScreen({onRegister}) {
                 style={styles.input}
             />
             <TextInput
-                label="Last Name"
+                label="Prenom"
                 value={form.lastName}
                 onChangeText={text => updateField('lastName', text)}
                 mode="flat"
@@ -78,7 +88,7 @@ export default function RegisterScreen({onRegister}) {
                 style={styles.input}
             />
             <TextInput
-                label="Phone"
+                label="Telphone"
                 value={form.phone}
                 onChangeText={text => updateField('phone', text)}
                 mode="flat"

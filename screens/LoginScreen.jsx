@@ -13,14 +13,14 @@ export default function LoginScreen({onRegister, onLogin}) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>SIGN IN</Text>
+            <Text style={styles.header}>TAILOR APP</Text>
 
             <TextInput
                 label="Username"
                 value={username}
                 onChangeText={setUsername}
                 mode="flat"
-                left={<TextInput.Icon name="account"/>}
+                left={<TextInput.Icon icon="account"/>}
                 style={styles.input}
             />
 
@@ -30,10 +30,10 @@ export default function LoginScreen({onRegister, onLogin}) {
                 onChangeText={setPassword}
                 secureTextEntry={!showPassword}
                 mode="flat"
-                left={<TextInput.Icon name="lock" />}
+                left={<TextInput.Icon icon="lock" />}
                 right={
                 <TextInput.Icon
-                    name={showPassword ? 'eye-off' : 'eye'}
+                    icon={showPassword ? 'eye-off' : 'eye'}
                     onPress={() => setShowPassword(!showPassword)}
                 />
                 }
@@ -42,7 +42,7 @@ export default function LoginScreen({onRegister, onLogin}) {
 
             <TouchableOpacity onPress={onRegister}>
                 <Text style={styles.registerText}>
-                Don’t have an account? <Text style={styles.registerLink}>Register Here</Text>
+                Vous n'avez pas de compte ? <Text style={styles.registerLink}>S'inscrire ici</Text>
                 </Text>
             </TouchableOpacity>
 
@@ -52,7 +52,7 @@ export default function LoginScreen({onRegister, onLogin}) {
                 style={styles.loginButton}
                 contentStyle={styles.loginContent}
             >
-                LOGIN
+                CONNEXION
             </Button>
         </View>
     )
